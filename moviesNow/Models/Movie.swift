@@ -18,5 +18,6 @@ extension Movie{
     static var dataMovie = [
     Movie(titulo: "batman", valoracion: "me parece una buena pelicula"),
     Movie(titulo: "superman", valoracion: "me parece una mala pelicula")
+    Movie(titulo: "el padrino", valoracion: "para ver en familia")
     ]
 }
