@@ -9,26 +9,48 @@ import UIKit
 
 class ValoracionController: UITableViewController {
     
-    let movies=Movie.dataMovie
+    var listaReview = [Review]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    var reviewManager=ReviewManager()
     
-        
-    }
+    var indicador = UIActivityIndicatorView()
+    
+    var movieID:Int?
     
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        reviewManager.delegate=self
+        //tableView.isUserInteractionEnabled = false
+        //confiActivityIndicador()
+        view.addSubview(indicador)
+        reviewManager.fetchMovie(id: movieID)
+        print("movieID: \(movieID ?? 0)")
+    }
+    
+    private func confiActivityIndicador(){
+        
+        indicador.center = CGPoint(x: 0, y: 0)
+        indicador.style = .large
+        indicador.color = UIColor.red
+        indicador.startAnimating()
+    }
+    
+    
+    @IBAction func addReviewButton(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "segueEditar", sender: nil)
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return movies.count
+        return listaReview.count
     }
 
    
@@ -36,18 +58,17 @@ class ValoracionController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "valoracionIdentifier", for: indexPath)
         
         var confi = UIListContentConfiguration.cell()
-        confi.text = movies[indexPath.row].valoracion
+        confi.text = listaReview[indexPath.row].content
         cell.contentConfiguration=confi
         print("indexpath row: \(indexPath.row)")
         print("indexpath itemm: \(indexPath.item)")
-       
-
+        
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "segueEditar", sender: nil)
+        //performSegue(withIdentifier: "segueEditar", sender: nil)
 
     }
 
@@ -87,14 +108,56 @@ class ValoracionController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            
+            switch identifier {
+            case "segueEditar" :
+                let destino = segue.destination as? ReviewViewController
+                destino?.delegate = self
+            default:
+                print("wrong segue")
+            }
+            
+            
+        }
     }
-    */
+    
 
+}
+
+extension  ValoracionController : ReviewViewControllerDelegate {
+    
+    func reviewViewControllerDelegate(_ reviewViewController: ReviewViewController, didCreateReview review: String) {
+        listaReview.append(Review(author: "anonimo", content: review))
+        tableView.reloadData()
+    }
+    
+    
+    
+}
+
+extension ValoracionController : ReviewManagerDelegate {
+    
+    func didUpdateReview(_ reviewManager: ReviewManager, reviews: [Review]) {
+        
+        DispatchQueue.main.async {
+            self.listaReview = reviews
+            self.tableView.reloadData()
+        }
+    
+    }
+    
+    func didFailWithError(error: Error) {
+        print("error fatal: \(error)")
+    }
+    
+    
+    
 }

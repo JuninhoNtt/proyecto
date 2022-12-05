@@ -9,23 +9,49 @@ import UIKit
 
 class MoviesTableViewController: UITableViewController {
 
-    let movies=Movie.dataMovie
+    var moviesList=[Movie]()
+    
+    var movieManager=MovieManager()
+    
+    var indicador = UIActivityIndicatorView()
+    
+  
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        movieManager.delegate=self
+        tableView.isUserInteractionEnabled = false
+        confiActivityIndicador()
+        view.addSubview(indicador)
+        movieManager.fetchMovie()
 
     
     }
+    
+    private func confiActivityIndicador(){
+        
+        let sizeScreen = UIScreen.main.bounds
+        let w = sizeScreen.width/2
+      //  let h = sizeScreen.height/2
+        print("mis medidas son wight: \(sizeScreen.width) y height: \(sizeScreen.height)")
+        indicador.center = CGPointMake(w, 0)
+        indicador.style = .large
+        indicador.color = UIColor.red
+        indicador.startAnimating()
+    }
+    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return movies.count
+     
+        return moviesList.count
     }
 
    
@@ -33,10 +59,9 @@ class MoviesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
         var confi = UIListContentConfiguration.cell()
-        confi.text = movies[indexPath.row].titulo
+        confi.text = moviesList[indexPath.row].title
         cell.contentConfiguration=confi
-        print("indexpath row: \(indexPath.row)")
-        print("indexpath itemm: \(indexPath.item)")
+      
        
 
         return cell
@@ -44,9 +69,11 @@ class MoviesTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "segueDetalles", sender: nil)
+        let movie=moviesList[indexPath.row]
+        performSegue(withIdentifier: "segueDetalles", sender: movie)
 
     }
+    
 
 
     /*
@@ -84,14 +111,47 @@ class MoviesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let identifier=segue.identifier{
+            
+            if identifier == "segueDetalles"{
+                let destino=segue.destination as? DetallesController
+                destino?.valorEntregado=sender as? Movie
+            }else{
+                
+            }
+        }
     }
-    */
+    
+  
+   
 
+}
+extension MoviesTableViewController: MovieManagerDelegate {
+    func didUpdateMovies(_ movieManager: MovieManager, movies: [Movie]) {
+        moviesList=movies
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.indicador.stopAnimating()
+            self.tableView.isUserInteractionEnabled = true
+
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        self.indicador.stopAnimating()
+        self.tableView.isUserInteractionEnabled = true
+        print(error)
+    }
+    
+  
+
+    
+   
 }

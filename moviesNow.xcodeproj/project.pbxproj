@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB284A8B2938EF5D00AF3CD3 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB284A8A2938EF5D00AF3CD3 /* MovieManager.swift */; };
+		DB284A8D2938F01800AF3CD3 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB284A8C2938F01800AF3CD3 /* MovieData.swift */; };
+		DB371F49293D47ED00F6B635 /* ReviewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB371F48293D47ED00F6B635 /* ReviewStoryboard.storyboard */; };
+		DB371F4B293DAABE00F6B635 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB371F4A293DAABE00F6B635 /* ReviewData.swift */; };
+		DB371F4D293DAC9F00F6B635 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB371F4C293DAC9F00F6B635 /* ReviewManager.swift */; };
 		DB610E932934F13A00F840B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB610E922934F13A00F840B1 /* AppDelegate.swift */; };
 		DB610E952934F13A00F840B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB610E942934F13A00F840B1 /* SceneDelegate.swift */; };
 		DB610E9A2934F13A00F840B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB610E982934F13A00F840B1 /* Main.storyboard */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB284A8A2938EF5D00AF3CD3 /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
+		DB284A8C2938F01800AF3CD3 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		DB371F48293D47ED00F6B635 /* ReviewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewStoryboard.storyboard; sourceTree = "<group>"; };
+		DB371F4A293DAABE00F6B635 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
+		DB371F4C293DAC9F00F6B635 /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
 		DB610E8F2934F13A00F840B1 /* moviesNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moviesNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB610E922934F13A00F840B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB610E942934F13A00F840B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +85,7 @@
 				DB610EA02934F13E00F840B1 /* Info.plist */,
 				DBA8233C2935D30700624415 /* MoviesTableViewController.swift */,
 				DBA8233F2935DB4700624415 /* ReviewViewController.swift */,
+				DB371F48293D47ED00F6B635 /* ReviewStoryboard.storyboard */,
 			);
 			path = moviesNow;
 			sourceTree = "<group>";
@@ -83,6 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				DB610EA72934F23C00F840B1 /* Movie.swift */,
+				DB284A8A2938EF5D00AF3CD3 /* MovieManager.swift */,
+				DB284A8C2938F01800AF3CD3 /* MovieData.swift */,
+				DB371F4A293DAABE00F6B635 /* ReviewData.swift */,
+				DB371F4C293DAC9F00F6B635 /* ReviewManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB610E9F2934F13E00F840B1 /* LaunchScreen.storyboard in Resources */,
+				DB371F49293D47ED00F6B635 /* ReviewStoryboard.storyboard in Resources */,
 				DB610E9C2934F13E00F840B1 /* Assets.xcassets in Resources */,
 				DB610E9A2934F13A00F840B1 /* Main.storyboard in Resources */,
 			);
@@ -158,8 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB284A8B2938EF5D00AF3CD3 /* MovieManager.swift in Sources */,
 				DBA8233D2935D30700624415 /* MoviesTableViewController.swift in Sources */,
 				DB610EAC2934F48D00F840B1 /* ValoracionController.swift in Sources */,
+				DB371F4B293DAABE00F6B635 /* ReviewData.swift in Sources */,
+				DB371F4D293DAC9F00F6B635 /* ReviewManager.swift in Sources */,
+				DB284A8D2938F01800AF3CD3 /* MovieData.swift in Sources */,
 				DBA823402935DB4700624415 /* ReviewViewController.swift in Sources */,
 				DB610EAA2934F47C00F840B1 /* DetallesController.swift in Sources */,
 				DB610E932934F13A00F840B1 /* AppDelegate.swift in Sources */,

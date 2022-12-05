@@ -7,23 +7,19 @@
 
 import Foundation
 
-struct Movie{
+struct MovieModel{
     
-    var titulo:String
-    var valoracion:String
+    let titulo: String
+    let fechaEstreno: String
+    let sinopsis: String
+    let rutaPoster: String
+    let comentario: String
+    let rating:String
+    
 }
 
-extension Movie{
+extension MovieModel{
     
-    static var dataMovie = [
-    Movie(titulo: "batman", valoracion: "me parece una buena pelicula"),
-    Movie(titulo: "superman", valoracion: "me parece una mala pelicula"),
-    Movie(titulo: "el padrino", valoracion: "para ver en familia"),
-    Movie(titulo: "titanic", valoracion: "pelicula aburrida"),
-    Movie(titulo: "cars", valoracion: "mal cgi"),
-    Movie(titulo: "el padrino 2", valoracion: "para ver un fin de semana"),
-    Movie(titulo: "la mujer maravilla", valoracion: "buena peli"),
-    Movie(titulo: "aquamman", valoracion: "buen cgi"),
-    Movie(titulo: "radipos y furiosos", valoracion: "muchos autos")
-    ]
+    static var pelicula = MovieModel(titulo: "ola", fechaEstreno: "12-12-22", sinopsis: "nada", rutaPoster: "ruuta", comentario: "buena pelicula", rating: "9.5")
+  
 }
