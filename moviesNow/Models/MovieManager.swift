@@ -13,12 +13,12 @@ protocol MovieManagerDelegate {
 }
 
 struct MovieManager {
-    let movieURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=9ef350e7424c4a32118de29377a9ea87&language=en-US&page=1"
-    
+ 
+let movieURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=9ef350e7424c4a32118de29377a9ea87"
+   
     var delegate: MovieManagerDelegate?
     
     func fetchMovie() {
-        //let urlString = "\(movieURL)&q=\(fecha)"
         performRequest(with: movieURL)
     }
     
@@ -28,6 +28,7 @@ struct MovieManager {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
+                
                 if error != nil {
                     print("ayuda error performrequest")
                     self.delegate?.didFailWithError(error: error!)
@@ -39,6 +40,7 @@ struct MovieManager {
                         self.delegate?.didUpdateMovies(self, movies: lstMovies)
                     }
                 }
+                
             }
             task.resume()
         }
@@ -50,7 +52,6 @@ struct MovieManager {
             let decodedData = try decoder.decode(MovieData.self, from: moviesData)
             let listMovies = decodedData.results
             print(listMovies.count)
-           // let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
             return listMovies
             
         } catch {

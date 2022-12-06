@@ -15,7 +15,6 @@ protocol ReviewManagerDelegate {
 struct ReviewManager {
     let movieURL = "https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=9ef350e7424c4a32118de29377a9ea87&language=en-US&page=1"
     
-    
     var delegate: ReviewManagerDelegate?
     
     func fetchMovie(id : Int?) {
@@ -39,12 +38,16 @@ struct ReviewManager {
                     self.delegate?.didFailWithError(error: error!)
                     return
                 }
+                
+                
                 if let safeData = data {
                     print("safedate data")
                     if let lstReviews = self.parseJSON(safeData) {
                         self.delegate?.didUpdateReview(self, reviews: lstReviews)
                     }
                 }
+                
+                
             }
             task.resume()
         }
