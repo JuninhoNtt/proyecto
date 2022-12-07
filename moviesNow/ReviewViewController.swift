@@ -10,13 +10,11 @@ import UIKit
 protocol ReviewViewControllerDelegate{
     
     func reviewViewControllerDelegate(_ reviewViewController: ReviewViewController, didCreateReview review : String)
-    
 }
 
 class ReviewViewController: UITableViewController {
     
     var delegate: ReviewViewControllerDelegate?
-
     @IBOutlet weak var reviewTextField: UITextField!
     
     override func viewDidLoad() {
@@ -32,8 +30,6 @@ class ReviewViewController: UITableViewController {
             delegate?.reviewViewControllerDelegate(self, didCreateReview: texto)
             navigationController?.popViewController(animated: true)
         }
-        
     }
    
-
 }

@@ -10,7 +10,6 @@
         <!--Valoracion Controller-->
         <scene sceneID="Drq-5S-xkZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W0C-HJ-GGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="SCReviews" id="2K3-gW-Y7E" customClass="ValoracionController" customModule="moviesNow" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ujM-09-ZlP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -42,13 +41,13 @@
                         <segue destination="Qpg-xS-QWn" kind="show" identifier="segueEditar" id="vT1-kg-Bfh"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0C-HJ-GGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6809.9236641221369" y="-1375.3521126760563"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="UhS-dO-Ogc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cHQ-mi-sWu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Qpg-xS-QWn" customClass="ReviewViewController" customModule="moviesNow" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="E4I-Hq-urT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -57,7 +56,7 @@
                         <sections>
                             <tableViewSection id="bZJ-Kg-pLs">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="8cW-56-IqS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="8cW-56-IqS">
                                         <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8cW-56-IqS" id="Oln-PZ-9E8">
@@ -75,6 +74,20 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="SGR-Hm-lV6" secondAttribute="bottom" id="TEt-ZA-SS1"/>
                                                 <constraint firstItem="SGR-Hm-lV6" firstAttribute="leading" secondItem="Oln-PZ-9E8" secondAttribute="leadingMargin" id="qUt-Mz-74F"/>
                                             </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="cbh-tj-oly">
+                                        <rect key="frame" x="0.0" y="130" width="393" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cbh-tj-oly" id="AUY-QS-Vms">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="x6Z-ni-499">
+                                                    <rect key="frame" x="149" y="37" width="94" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </stepper>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -96,6 +109,7 @@
                         <outlet property="reviewTextField" destination="SGR-Hm-lV6" id="hk1-by-YvS"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHQ-mi-sWu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7666.4122137404574" y="-1368.3098591549297"/>
         </scene>

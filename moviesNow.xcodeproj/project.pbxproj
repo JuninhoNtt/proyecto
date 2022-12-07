@@ -20,8 +20,8 @@
 		DB610EA82934F23C00F840B1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB610EA72934F23C00F840B1 /* Movie.swift */; };
 		DB610EAA2934F47C00F840B1 /* DetallesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB610EA92934F47C00F840B1 /* DetallesController.swift */; };
 		DB610EAC2934F48D00F840B1 /* ValoracionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB610EAB2934F48D00F840B1 /* ValoracionController.swift */; };
-		DBA8233D2935D30700624415 /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA8233C2935D30700624415 /* MoviesTableViewController.swift */; };
 		DBA823402935DB4700624415 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA8233F2935DB4700624415 /* ReviewViewController.swift */; };
+		DBEB0F8929411D6C00332525 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB0F8829411D6C00332525 /* MovieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +40,8 @@
 		DB610EA72934F23C00F840B1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DB610EA92934F47C00F840B1 /* DetallesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesController.swift; sourceTree = "<group>"; };
 		DB610EAB2934F48D00F840B1 /* ValoracionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValoracionController.swift; sourceTree = "<group>"; };
-		DBA8233C2935D30700624415 /* MoviesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		DBA8233F2935DB4700624415 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		DBEB0F8829411D6C00332525 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +83,9 @@
 				DB610E9B2934F13E00F840B1 /* Assets.xcassets */,
 				DB610E9D2934F13E00F840B1 /* LaunchScreen.storyboard */,
 				DB610EA02934F13E00F840B1 /* Info.plist */,
-				DBA8233C2935D30700624415 /* MoviesTableViewController.swift */,
 				DBA8233F2935DB4700624415 /* ReviewViewController.swift */,
 				DB371F48293D47ED00F6B635 /* ReviewStoryboard.storyboard */,
+				DBEB0F8829411D6C00332525 /* MovieViewController.swift */,
 			);
 			path = moviesNow;
 			sourceTree = "<group>";
@@ -175,7 +175,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB284A8B2938EF5D00AF3CD3 /* MovieManager.swift in Sources */,
-				DBA8233D2935D30700624415 /* MoviesTableViewController.swift in Sources */,
 				DB610EAC2934F48D00F840B1 /* ValoracionController.swift in Sources */,
 				DB371F4B293DAABE00F6B635 /* ReviewData.swift in Sources */,
 				DB371F4D293DAC9F00F6B635 /* ReviewManager.swift in Sources */,
@@ -185,6 +184,7 @@
 				DB610E932934F13A00F840B1 /* AppDelegate.swift in Sources */,
 				DB610EA82934F23C00F840B1 /* Movie.swift in Sources */,
 				DB610E952934F13A00F840B1 /* SceneDelegate.swift in Sources */,
+				DBEB0F8929411D6C00332525 /* MovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
