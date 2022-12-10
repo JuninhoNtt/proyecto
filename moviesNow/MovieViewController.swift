@@ -45,7 +45,8 @@ class MovieViewController: UIViewController {
         if let identifier = segue.identifier {
             if identifier == "segueDetalles"{
                 let destino = segue.destination as? DetallesController
-                destino?.valorEntregado=sender as? Movie
+                let movie = sender as? Movie
+                destino?.valorEntregado=movie
             }
         }
     }
@@ -59,11 +60,14 @@ extension MovieViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierCell", for: indexPath)
-        var confi = UIListContentConfiguration.cell()
-        confi.text = listMovies[indexPath.row].title
-        cell.contentConfiguration = confi
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierCell", for: indexPath)  as? MovieViewCell
+        let movie = listMovies[indexPath.row]
+        cell?.titleLabel.text = movie.title
+        cell?.descriLabel.text = movie.release_date
+        //var confi = UIListContentConfiguration.cell()
+        //confi.text = listMovies[indexPath.row].title
+        //cell.contentConfiguration = confi
+        return cell ?? UITableViewCell()
     }
     
     

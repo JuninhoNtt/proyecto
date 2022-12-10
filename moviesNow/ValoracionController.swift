@@ -38,7 +38,6 @@ class ValoracionController: UITableViewController {
     
     
     @IBAction func addReviewButton(_ sender: UIBarButtonItem) {
-        
         performSegue(withIdentifier: "segueEditar", sender: nil)
     }
     
@@ -55,20 +54,21 @@ class ValoracionController: UITableViewController {
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "valoracionIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "valoracionIdentifier", for: indexPath) as? ReviewViewCell
+        let review = listaReview [indexPath.row]
+        //cell?.reviewLabel.text = review.content
+        cell?.setup(review: review)
+        return cell ?? UITableViewCell()
         
-        var confi = UIListContentConfiguration.cell()
-        confi.text = listaReview[indexPath.row].content
-        cell.contentConfiguration=confi
-        print("indexpath row: \(indexPath.row)")
-        print("indexpath itemm: \(indexPath.item)")
         
-        return cell
+        
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: "segueEditar", sender: nil)
+        
+        let review = listaReview[indexPath.row]
+        performSegue(withIdentifier: "segueReviewDetalles", sender: review)
 
     }
 
@@ -121,6 +121,10 @@ class ValoracionController: UITableViewController {
             case "segueEditar" :
                 let destino = segue.destination as? ReviewViewController
                 destino?.delegate = self
+            case "segueReviewDetalles":
+                let destino = segue.destination as? ReviewDetallesViewController
+                let review = sender as? Review
+                destino?.review = review
             default:
                 print("wrong segue")
             }
@@ -146,9 +150,20 @@ extension  ValoracionController : ReviewViewControllerDelegate {
 extension ValoracionController : ReviewManagerDelegate {
     
     func didUpdateReview(_ reviewManager: ReviewManager, reviews: [Review]) {
-        
         DispatchQueue.main.async {
             self.listaReview = reviews
+
+         /*   for review in reviews {
+                if review.content.count > 80{
+                    let maxCharacters = review.content.prefix(80)+"..."
+                    let reviewRe = Review(author: review.author, content: String(maxCharacters))
+                    lstReviews.append(reviewRe)
+                }else{
+                    lstReviews.append(review)
+                }
+            }
+            self.listaReview = lstReviews*/
+            
             self.tableView.reloadData()
         }
     

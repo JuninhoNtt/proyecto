@@ -11,26 +11,28 @@ class DetallesController: UITableViewController {
 
     @IBOutlet private weak var labelTitle: UILabel!
     
-    @IBOutlet weak var valoracionLabel: UILabel!
+    @IBOutlet private weak var valoracionLabel: UILabel!
     
-    @IBOutlet weak var estrenoLabel: UILabel!
+    @IBOutlet private weak var estrenoLabel: UILabel!
     
-    @IBOutlet weak var sinopsisLabel: UILabel!
+    @IBOutlet private weak var sinopsisLabel: UILabel!
     
     var valorEntregado :Movie?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+         setup(movie: valorEntregado)
+        
+    }
+    
+    private func setup(movie: Movie?){
         labelTitle.text=valorEntregado?.title
         estrenoLabel.text = valorEntregado?.release_date
         sinopsisLabel.text = valorEntregado?.overview
-        
         if let valoracion = valorEntregado?.vote_average{
             valoracionLabel.text = String(valoracion)
         }
-        
     }
     
     

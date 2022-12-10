@@ -16,10 +16,15 @@ class ReviewViewController: UITableViewController {
     
     var delegate: ReviewViewControllerDelegate?
     @IBOutlet weak var reviewTextField: UITextField!
+    var rateManager = RateManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        rateManager.delegate = self
+        rateManager.fetchRate()
+        
+        
+        
     }
 
     @IBAction func saveReviewButton(_ sender: UIBarButtonItem) {
@@ -32,4 +37,30 @@ class ReviewViewController: UITableViewController {
         }
     }
    
+}
+
+extension ReviewViewController : RateManagerDelegate {
+    
+    func didUpdateRate(_ rateManager: RateManager, mensaje: String) {
+        DispatchQueue.main.async {
+            let alerta = CrearAlerta().alertaSimple(titulo: "Api Response", mensaje: " Review Guardada", color: UIColor.white)
+            self.present(alerta, animated: true)
+        }
+       
+    }
+    
+    func didFailWithError(error: Error) {
+        DispatchQueue.main.async {
+            let alerta = CrearAlerta().alertaSimple(titulo: "Api Response", mensaje: "Error al guardar Review", color: UIColor.white)
+            self.present(alerta, animated: true)
+        }
+      
+    }
+    
+    
+    
+    
+    
+    
+    
 }
