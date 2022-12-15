@@ -13,17 +13,33 @@ import UIKit
 
 class MovieListRoute {
     var presenter:MovieListPresenter?
-    var viewController:MovieViewController?
+    var view:UIViewController?
 }
 
 extension MovieListRoute : MovieListRouteProtocol {
+    
+    
     
     func selectMovieListItem(movieModel: MovieModel) {
         
         let itemMovieDetail = MovieDetail(id: movieModel.id, titulo: movieModel.titulo, fechaEstreno: movieModel.fechaEstreno, sinopsis: movieModel.sinopsis, rutaPoster: movieModel.rutaPoster, rating: movieModel.rating)
      
         let viewMovieDetail = MovieDetailConfigurator.makeView(itemMovieDetail)
-        viewController?.navigationController?.pushViewController(viewMovieDetail, animated: true)
+        
+       view?.navigationController?.pushViewController(viewMovieDetail, animated: true)
+
+    }
+    
+    func showAlertDialog() {
+        
+        DispatchQueue.main.async {
+            let alert = CrearAlerta.alertaSimple(titulo: "Aviso", mensaje: "tuvimos un problema al mostrar la lista", color: UIColor.white)
+            self.view?.present(alert, animated: true)
+            self.presenter?.showAlertMovieList()
+
+        }
+       
+          
 
     }
     

@@ -13,7 +13,7 @@ class ReviewDetailPresenter  {
     private var reviewDetail:ReviewDetailModel
     
     required init(_ review: ItemReviewDetailProtocol) {
-        reviewDetail = ReviewDetailModel(review: review.review, autor: review.autor)
+        reviewDetail = ReviewDetailModel(review: review.review, autor: review.autor,rating: review.rating)
     }
     
 }

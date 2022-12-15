@@ -14,23 +14,19 @@ class ReviewDetallesViewController: UITableViewController {
     @IBOutlet private weak var autorLabel: UILabel!
     @IBOutlet private weak var rateLabel: UILabel!
     
-    var review:ReviewModel?
     var presenter : ReviewDetailInputPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reviewLabel.text = presenter?.getReviewDetailDes().review
-        autorLabel.text = presenter?.getReviewDetailDes().autor
 
-         setup(review: review)
+         setup()
 
     }
     
-    private func setup(review: ReviewModel?){
-        //if let review = review {
-           // reviewLabel.text = review.content
-          //  autorLabel.text = review.author
-            rateLabel.text = "9"
-       // }
+    private func setup(){
+        reviewLabel.text = presenter?.getReviewDetailDes().review
+        autorLabel.text = presenter?.getReviewDetailDes().autor
+        rateLabel.text = presenter?.getReviewDetailDes().rating?.description
+
     }
 }

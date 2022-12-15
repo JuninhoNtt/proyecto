@@ -16,26 +16,20 @@ class RateViewController: UITableViewController {
     @IBOutlet private weak var rateLabel: UILabel!
     @IBOutlet private weak var rateMovieStepper: UIStepper!
     
-    
     var presenter: RatePrenseterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reviewTextField.placeholder = "mi comentario de la pelicula"
        confirationStepper()
     }
 
     @IBAction private func saveReviewButton(_ sender: UIBarButtonItem) {
         
-        var texto = reviewTextField.text ?? ""
+        let review = reviewTextField.text ?? ""
         let rateMovie = rateLabel.text ?? ""
-        texto = texto.trimmingCharacters(in: .whitespacesAndNewlines)
-      
-        if !texto.isEmpty && !rateMovie.isEmpty{
-          sendRateMovie(rate: rateMovie)
-            
-        }else{
-            presenter?.showRateError(message: "te falta llenar campos" )
-        }
+        presenter?.setRateMovie(review: review, rating: rateMovie)
+       
     }
     
     @IBAction  private func rateMovieStepper(_ sender: UIStepper) {
@@ -50,15 +44,5 @@ class RateViewController: UITableViewController {
        rateMovieStepper.minimumValue = 0
     }
     
-    private func sendRateMovie(rate: String){
-      
-    if let rateMovie = Int(rate){
-        presenter?.setRateMovie( rateModel: Rate(value: rateMovie))
-    }else {
-        presenter?.showRateError(message: "ocurrio un problema con el puntaje" )
-
-    }
-        
-    }
-    
+  
 }

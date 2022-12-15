@@ -11,7 +11,7 @@ import UIKit
 
 class ReviewListRoute {
     
-    var view : ValoracionController?
+    var view : UIViewController?
 }
 
 extension ReviewListRoute : ReviewListRouteProtocol {
@@ -27,7 +27,7 @@ extension ReviewListRoute : ReviewListRouteProtocol {
     
     
     func showReviewItem(reviewModel review: ReviewModel) {
-        let itemReview = ItemReview(review: review.content, autor: review.author)
+        let itemReview = ItemReview(review: review.content, autor: review.author,rating: review.rating)
         let viewController = ReviewDetailConfigurator.makeModule(itemReview)
         view?.present(viewController, animated: true)
     }

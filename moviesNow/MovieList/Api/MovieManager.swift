@@ -15,7 +15,7 @@ protocol MovieManagerDelegate {
 struct MovieManager {
  
     let movieURL = Constantes.BASE_URL+Constantes.NOW_PLAYING+Constantes.API_KEY
-   
+    
     var delegate: MovieManagerDelegate?
     
     func fetchMovie() {
@@ -28,12 +28,10 @@ struct MovieManager {
             let task = session.dataTask(with: url) { (data, response, error) in
                 
                 if error != nil {
-                    print("ayuda error performrequest")
                     self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 if let safeData = data {
-                    print("safedate data")
                     if let lstMovies = self.parseJSON(safeData) {
                         self.delegate?.didUpdateMovies(self, moviesResponse: lstMovies)
                     }

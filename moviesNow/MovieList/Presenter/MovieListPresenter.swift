@@ -14,14 +14,21 @@ class MovieListPresenter{
     
     var view:MovieViewControllerProtocol?
     var interactor:MovieListInteractor?
-    var route:MovieListRoute?
+    var route:MovieListRouteProtocol?
     
 }
 
 extension MovieListPresenter : MovieListPresenterInputProtocol{
+    func showAlertMovieList() {
+       // route?.showAlertDialog()
+        view?.showErrorView()
+    }
+    
+    //pedir al interactor las pelicuulas
     func getMovieList() {
         interactor?.getListMovies()
     }
+    //seleccionar una pelicula
     func showMovieListItem(movieModel: MovieModel) {
         route?.selectMovieListItem(movieModel: movieModel)
 
@@ -29,33 +36,16 @@ extension MovieListPresenter : MovieListPresenterInputProtocol{
 }
 
 extension MovieListPresenter : MovieListPresenterOutputProtocol {
-    
-    func setMovieList(listMovies: [MovieModel]) {
-        view?.showMovie(listMovies: listMovies)
+    func setErrorList() {
+        route?.showAlertDialog()
+       // view?.showErrorView()
 
     }
     
-   
-    
-    
+    //el interactor devuelve las peliculas
+    func setMovieList(listMovies: [MovieModel]) {
+        view?.showMovie(listMovies: listMovies)
+    }
+  
 }
 
-/*extension MovieListPresenter : MovieListPresenterProtocol {
-   
-    func getMovieList() {
-        //get movie from interactor
-        interactor?.getListMovies()
-    }
-    
-    func setMovieList(listMovies: [MovieModel]) {
-        //pass movielist to view
-        view?.showMovie(listMovies: listMovies)
-    }
-    
-    func showMovieListItem(movieModel: MovieModel) {
-        //
-        print("show movie list item")
-        route?.selectMovieListItem(movieModel: movieModel)
-    }
-    
-}*/

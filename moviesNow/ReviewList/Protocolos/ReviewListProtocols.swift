@@ -36,6 +36,8 @@ protocol ReviewListPresenterInputProtocol {
 protocol ReviewListPresenterOuputProtocol {
     
     func setListReview(reviewList : [ReviewModel])
+    func returnErrorReview()
+
 }
 
 //interacto to presenter

@@ -23,8 +23,20 @@ class RatePresenter {
 }
 
 extension RatePresenter : RatePrenseterProtocol {
-    func setRateMovie(rateModel: Rate) {
-        interactor?.setRateMovie(movieID: movieId, rate: rateModel)
+    func setRateMovie(review: String,rating: String) {
+        
+        let review = review.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if !review.isEmpty {
+            if let rating = Int(rating){
+                let ratingMovie = Rate(value: rating)
+                interactor?.setRateMovie(movieID: movieId, rate: ratingMovie)
+            }else{
+                showRateError(message: "rating no valido" )
+            }
+        }else{
+            showRateError(message: "te falta llenar campos" )
+        }
 
     }
     

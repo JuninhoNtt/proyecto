@@ -13,14 +13,13 @@ struct ReviewData: Decodable {
 
 struct Review : Decodable {
     let author:String
-   // let author_details:[AuthorDetails]?
+    let author_details: AuthorDetails
     let content: String
-   // let created_at : String
 }
 
 struct AuthorDetails: Decodable {
-    let name: String
-    let uuserName: String
-    let rating: Int
+    let name: String?
+    //let username: String
+     let rating: Float?
 }
 

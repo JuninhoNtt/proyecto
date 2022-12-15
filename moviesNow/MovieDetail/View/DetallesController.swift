@@ -20,6 +20,7 @@ class DetallesController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = UIColor.white
         setup(movie: presenter)
         
     }
@@ -37,7 +38,6 @@ class DetallesController: UITableViewController {
     
     @IBAction func showReviewsButton(_ sender: UIBarButtonItem) {
         if let id  = presenter?.getMovie().id {
-            print("holaaaa")
             presenter?.goToReviewList(id)
         }
 

@@ -37,11 +37,11 @@
 		DB610E9F2934F13E00F840B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB610E9D2934F13E00F840B1 /* LaunchScreen.storyboard */; };
 		DB610EA82934F23C00F840B1 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB610EA72934F23C00F840B1 /* MovieModel.swift */; };
 		DB610EAA2934F47C00F840B1 /* DetallesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB610EA92934F47C00F840B1 /* DetallesController.swift */; };
-		DB610EAC2934F48D00F840B1 /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB610EAB2934F48D00F840B1 /* ReviewController.swift */; };
 		DB6189E429454DBD0006DB63 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6189E329454DBD0006DB63 /* AlertController.swift */; };
 		DBA823402935DB4700624415 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA8233F2935DB4700624415 /* RateViewController.swift */; };
 		DBB3C2662946359B0093D13B /* RateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB3C2652946359B0093D13B /* RateModel.swift */; };
 		DBB3C269294640CC0093D13B /* RateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB3C268294640CC0093D13B /* RateConfiguration.swift */; };
+		DBDCA194294AE2870053DFC2 /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDCA193294AE2870053DFC2 /* ReviewListViewController.swift */; };
 		DBEB0F8929411D6C00332525 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB0F8829411D6C00332525 /* MovieViewController.swift */; };
 		DBEB0F8B294168CB00332525 /* ReviewDetallesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB0F8A294168CB00332525 /* ReviewDetallesViewController.swift */; };
 		DBEB0F8D2941785E00332525 /* ReviewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB0F8C2941785E00332525 /* ReviewViewCell.swift */; };
@@ -95,11 +95,11 @@
 		DB610EA02934F13E00F840B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB610EA72934F23C00F840B1 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		DB610EA92934F47C00F840B1 /* DetallesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesController.swift; sourceTree = "<group>"; };
-		DB610EAB2934F48D00F840B1 /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		DB6189E329454DBD0006DB63 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		DBA8233F2935DB4700624415 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		DBB3C2652946359B0093D13B /* RateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateModel.swift; sourceTree = "<group>"; };
 		DBB3C268294640CC0093D13B /* RateConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateConfiguration.swift; sourceTree = "<group>"; };
+		DBDCA193294AE2870053DFC2 /* ReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListViewController.swift; sourceTree = "<group>"; };
 		DBEB0F8829411D6C00332525 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		DBEB0F8A294168CB00332525 /* ReviewDetallesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetallesViewController.swift; sourceTree = "<group>"; };
 		DBEB0F8C2941785E00332525 /* ReviewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewCell.swift; sourceTree = "<group>"; };
@@ -337,8 +337,8 @@
 		DBF86FFF2945539800EFDBB2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DB610EAB2934F48D00F840B1 /* ReviewController.swift */,
 				DBEB0F8C2941785E00332525 /* ReviewViewCell.swift */,
+				DBDCA193294AE2870053DFC2 /* ReviewListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -613,7 +613,6 @@
 				DB5EE37729499BFD008001ED /* ItemRate.swift in Sources */,
 				DBF8700C2945574100EFDBB2 /* MovieListInteractor.swift in Sources */,
 				DBF8702B29459D3A00EFDBB2 /* RatePresenter.swift in Sources */,
-				DB610EAC2934F48D00F840B1 /* ReviewController.swift in Sources */,
 				DB371F4B293DAABE00F6B635 /* ReviewResponse.swift in Sources */,
 				DB371F4D293DAC9F00F6B635 /* ReviewManager.swift in Sources */,
 				DBB3C2662946359B0093D13B /* RateModel.swift in Sources */,
@@ -654,6 +653,7 @@
 				DB3215D62944E1DE00624A5C /* MovieViewCell.swift in Sources */,
 				DBF870202945830400EFDBB2 /* ReviewListInteractor.swift in Sources */,
 				DB5EE3682949749D008001ED /* MovieDetailModel.swift in Sources */,
+				DBDCA194294AE2870053DFC2 /* ReviewListViewController.swift in Sources */,
 				DBF8702D29459D4A00EFDBB2 /* RateInteractor.swift in Sources */,
 				DBF202BD29490B9F002423DA /* MovieListProtocols.swift in Sources */,
 				DB3215DA2944FEB600624A5C /* RateResponse.swift in Sources */,
@@ -807,7 +807,6 @@
 				INFOPLIST_FILE = moviesNow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -834,7 +833,6 @@
 				INFOPLIST_FILE = moviesNow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

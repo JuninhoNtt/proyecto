@@ -11,6 +11,7 @@ import Foundation
 protocol MovieViewControllerProtocol{
     //lo que debe mostar la view
     func showMovie(listMovies: [MovieModel])
+    func showErrorView()
 }
 //prenseter
 //datos de ingreso
@@ -19,13 +20,15 @@ protocol MovieListPresenterInputProtocol{
     func getMovieList()
     //presenter to route
     func showMovieListItem(movieModel : MovieModel)
+    //mostrar alerta de error
+    func showAlertMovieList()
 }
 //datos de salida
 protocol MovieListPresenterOutputProtocol{
-    
-    //presenter to view
     //datos que el presenter tiene que devolver
     func setMovieList(listMovies : [MovieModel])
+    func setErrorList()
+    
 }
 //interactor
 protocol MovieListInteractorProtocol{
@@ -34,4 +37,5 @@ protocol MovieListInteractorProtocol{
 
 protocol MovieListRouteProtocol {
     func selectMovieListItem(movieModel : MovieModel)
+    func showAlertDialog()
 }

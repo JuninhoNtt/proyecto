@@ -23,6 +23,10 @@ class ReviewListPresenter {
 }
 
 extension ReviewListPresenter : ReviewListPresenterInputProtocol {
+    func returnErrorReview() {
+        view?.getReviewListError(error: "Tuvimos un problema al mostrar las review")
+    }
+    
     func showAddReview() {
         route?.showAddReviewItem(movieID: movieReviewId)
     }

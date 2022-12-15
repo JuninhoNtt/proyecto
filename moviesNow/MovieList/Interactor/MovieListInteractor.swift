@@ -16,6 +16,7 @@ class MovieListInteractor {
 
 extension MovieListInteractor: MovieListInteractorProtocol {
     
+   
     func getListMovies() {
         api.delegate = self
         api.fetchMovie()
@@ -36,7 +37,9 @@ extension MovieListInteractor : MovieManagerDelegate {
     }
     
     func didFailWithError(error: Error) {
+        presenter?.setErrorList()
         print("error con el api")
+
     }
     
 }

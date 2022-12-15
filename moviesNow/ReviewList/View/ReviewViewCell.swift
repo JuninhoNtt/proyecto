@@ -9,8 +9,8 @@ import UIKit
 
 class ReviewViewCell: UITableViewCell {
     
-    @IBOutlet  weak var reviewLabel: UILabel!
-    @IBOutlet weak var autorLabel: UILabel!
+    @IBOutlet private weak var reviewLabel: UILabel!
+    @IBOutlet private weak var autorLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +25,7 @@ class ReviewViewCell: UITableViewCell {
     
     func setup(review : ReviewModel){
        reviewLabel.text = review.content
-        autorLabel.text = review.author
+       autorLabel.text = review.author
     }
 
 }

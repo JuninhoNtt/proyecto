@@ -8,7 +8,11 @@
 import Foundation
 
 struct ReviewDetailModel : ItemReviewDetailProtocol {
+    
+    
     var review: String
     var autor: String
+    var rating: Float?
+
    
 }

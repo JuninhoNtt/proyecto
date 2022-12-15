@@ -12,6 +12,7 @@ protocol ItemReviewDetailProtocol{
     
     var review : String { get }
     var autor : String { get }
+    var rating : Float? {get}
     
 }
 

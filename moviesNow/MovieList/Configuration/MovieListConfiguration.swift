@@ -10,13 +10,16 @@ import UIKit
 
 class MovieListConfigurator {
    
-    static func makeLista(view : MovieViewController)  {
+    static func makeLista() -> UIViewController  {
        
        let presenter = MovieListPresenter()
        let interactor = MovieListInteractor()
        let route = MovieListRoute()
         
-       view.presenter = presenter
+        let st = UIStoryboard(name: "Main", bundle: nil)
+        let view = st.instantiateViewController(withIdentifier: "MovieViewController") as? MovieViewController
+        
+        view?.presenter = presenter
 
        //prenseter
        presenter.view = view
@@ -28,7 +31,9 @@ class MovieListConfigurator {
         
        //route
        route.presenter = presenter
-       route.viewController = view
+       route.view = view
+        
+       return view!
         
    }
    

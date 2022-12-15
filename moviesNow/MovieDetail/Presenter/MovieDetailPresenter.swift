@@ -27,7 +27,6 @@ extension MovieDetailPresenter : MovieDetailInputProtocol {
     }
     
     func goToReviewList(_ idMovie: Int) {
-        print("prenseter go to review list")
         router?.showReviewList(idMovie)
     }
  

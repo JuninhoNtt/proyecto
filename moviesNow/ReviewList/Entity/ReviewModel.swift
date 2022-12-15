@@ -11,5 +11,6 @@ struct ReviewModel {
     
     let author:String
     let content: String
+    let rating: Float?
   
 }

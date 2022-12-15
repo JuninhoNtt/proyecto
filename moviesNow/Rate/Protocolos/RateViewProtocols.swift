@@ -23,7 +23,7 @@ protocol ReviewViewControllerDelegate{
 //presenter
 protocol RatePrenseterProtocol{
     
-    func setRateMovie(rateModel : Rate)
+    func setRateMovie(review: String, rating : String)
     func showRateResponse(message : RateResponseModel)
     func showRateError(message : String)
 }

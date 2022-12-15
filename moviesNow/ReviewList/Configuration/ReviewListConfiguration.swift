@@ -17,14 +17,14 @@ class ReviewListConfiguration {
         let route = ReviewListRoute()
        // var view = tableViewController
         let storyBoard = UIStoryboard(name: "ReviewStoryboard", bundle: nil)
-        let view = storyBoard.instantiateViewController(withIdentifier: "SCReviews") as? ValoracionController
+        let view = storyBoard.instantiateViewController(withIdentifier: "SCReviews") as? ReviewListViewController
         //presenter
         presenter.interactor = interactor
         presenter.route = route
         presenter.view = view
         
         //interactor
-        interactor.prenseter = presenter
+        interactor.presenter = presenter
         
         //route
         //route.presenter = presenter

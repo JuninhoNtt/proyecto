@@ -16,5 +16,4 @@ struct MovieDetail : ItemMovieDetailProtocol {
     var rutaPoster: String
     var rating: Float
     
-   
 }
