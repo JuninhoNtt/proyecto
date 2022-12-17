@@ -17,7 +17,7 @@ class ReviewListConfiguration {
         let route = ReviewListRoute()
        // var view = tableViewController
         let storyBoard = UIStoryboard(name: "ReviewStoryboard", bundle: nil)
-        let view = storyBoard.instantiateViewController(withIdentifier: "SCReviews") as? ReviewListViewController
+        weak var  view = storyBoard.instantiateViewController(withIdentifier: "SCReviews") as? ReviewListViewController
         //presenter
         presenter.interactor = interactor
         presenter.route = route

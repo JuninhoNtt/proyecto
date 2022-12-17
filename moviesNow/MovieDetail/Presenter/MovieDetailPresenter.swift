@@ -11,19 +11,20 @@ import Foundation
 class MovieDetailPresenter {
   
 
-    private var movieDetailModel : MovieDetailModel
-    var router : MovieDetailRouter?
+   private var movieDetailModel : MovieDetailModel
+    var router : MovieDetailRouterProtocol?
     
-    required init(_ itemMovieDetailProtocol : ItemMovieDetailProtocol) {
+    init(_ itemMovieDetailProtocol : ItemMovieDetailProtocol) {
         self.movieDetailModel = MovieDetailModel(itemMovieDetailProtocol)
+        
     }
- 
+  
 }
 
 extension MovieDetailPresenter : MovieDetailInputProtocol {
     
     func getMovie() -> MovieDetailModel {
-        return movieDetailModel
+        movieDetailModel
     }
     
     func goToReviewList(_ idMovie: Int) {

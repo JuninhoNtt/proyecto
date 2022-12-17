@@ -15,7 +15,7 @@ class ReviewDetailConfigurator {
         let presenter = ReviewDetailPresenter(review)
         
         
-        let view = UIStoryboard(name: "ReviewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ReviewDetallesViewController") as? ReviewDetallesViewController
+        weak var  view = UIStoryboard(name: "ReviewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ReviewDetallesViewController") as? ReviewDetallesViewController
         
        view?.presenter = presenter
           

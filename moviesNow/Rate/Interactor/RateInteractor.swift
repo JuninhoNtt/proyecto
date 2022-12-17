@@ -10,18 +10,13 @@ import Foundation
 
 
 class RateInteractor {
-    var presenter: RatePrenseterProtocol?
+    weak var presenter: RatePrenseterProtocol?
     var api = RateManager()
 }
 extension RateInteractor : RateInteractorProtocol {
     func setRateMovie(movieID: Int, rate: Rate) {
         api.delegate = self
         api.fetchRate(movieID: String(movieID), rate: rate)
-    }
-    
-   
-    func getRateMovieResponse() {
-        print("get rate movie response API")
     }
   
 }
@@ -30,13 +25,11 @@ extension RateInteractor : RateManagerDelegate {
 
     func didUpdateRate(_ rateManager: RateManager, rateResponseModel: RateResponseModel) {
         presenter?.showRateResponse(message: rateResponseModel)
-        print("interactor didupdateRAte")
+        print("interactor didupdaterate:\(rateResponseModel.status_code)")
     }
     
-
-    
     func didFailWithError(error: Error) {
-        print("interactor didfailWithError")
+        presenter?.showRateError(message: "error")
     }
    
 }

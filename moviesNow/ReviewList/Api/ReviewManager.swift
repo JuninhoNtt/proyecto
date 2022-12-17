@@ -7,15 +7,10 @@
 
 import Foundation
 
-protocol ReviewManagerDelegate {
-    
-    func didUpdateReview(_ reviewManager: ReviewManager, reviews:  [Review])
-    func didFailWithError(error: Error)
-}
 
 struct ReviewManager {
   
-    var delegate: ReviewManagerDelegate?
+   weak var delegate: ReviewManagerDelegate?
     
     func fetchMovie(id : Int?) {
         if let id = id {

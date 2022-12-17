@@ -11,7 +11,7 @@ import UIKit
 
 class ReviewListRoute {
     
-    var view : UIViewController?
+    weak var view : UIViewController?
 }
 
 extension ReviewListRoute : ReviewListRouteProtocol {

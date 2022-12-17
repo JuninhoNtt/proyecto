@@ -11,7 +11,7 @@ import Foundation
 
 class ReviewListPresenter {
     
-    var view : ValoracionControllerProtocol?
+    weak var view : ReviewListViewControllerProtocol?
     var interactor : ReviewListInteractorProtocol?
     var route : ReviewListRouteProtocol?
     

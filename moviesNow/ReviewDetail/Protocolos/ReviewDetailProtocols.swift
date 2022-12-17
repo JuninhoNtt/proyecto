@@ -16,7 +16,7 @@ protocol ItemReviewDetailProtocol{
     
 }
 
-protocol ReviewDetailInputPresenter{
+protocol ReviewDetailInputPresenter {
     
     func getReviewDetailDes() -> ItemReviewDetailProtocol
 }

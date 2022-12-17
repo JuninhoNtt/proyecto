@@ -70,17 +70,8 @@ extension ReviewListViewController : UITableViewDataSource{
    
 }
 
-extension ReviewListViewController : ReviewViewControllerDelegate{
-    func reviewViewControllerDelegate(_ rateViewController: RateViewController, didCreateReview review: String) {
-        reviewList.append(ReviewModel(author: "anonimo", content: review, rating: 0))
-        tableView.reloadData()
-        self.activityIndicador.stopAnimating()
 
-    }
-    
-}
-
-extension ReviewListViewController : ValoracionControllerProtocol {
+extension ReviewListViewController : ReviewListViewControllerProtocol {
     func getReviewListError(error: String) {
         DispatchQueue.main.async {
             self.activityIndicador.stopAnimating()
@@ -99,6 +90,5 @@ extension ReviewListViewController : ValoracionControllerProtocol {
         }
     }
     
-   
  
 }

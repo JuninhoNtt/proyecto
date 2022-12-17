@@ -17,14 +17,14 @@ protocol getMovieIdReviewProtocol {
     func getMovieId() -> Int
 }
 
-//lo que debe mostrar la lista
-protocol ValoracionControllerProtocol {
+//lo que debe mostrar la vista
+protocol ReviewListViewControllerProtocol : AnyObject{
     
     func showReviewList(reviewList: [ReviewModel])
     func getReviewListError(error: String)
     
 }
-//protocolo a view
+//lo que necesita la vista del presenter
 protocol ReviewListPresenterInputProtocol {
     
     func getListReview()
@@ -32,25 +32,32 @@ protocol ReviewListPresenterInputProtocol {
     func showAddReview()
 }
     
-//view to protocolo
-protocol ReviewListPresenterOuputProtocol {
+//lo que necesita el presenter  del interactor
+protocol ReviewListPresenterOuputProtocol : AnyObject {
     
     func setListReview(reviewList : [ReviewModel])
     func returnErrorReview()
 
 }
 
-//interacto to presenter
-protocol ReviewListInteractorProtocol {
+//lo que necesita el interacotr
+protocol ReviewListInteractorProtocol  {
     
     func getReviewList(movieID : Int)
     
 }
 //presenter to router
-
-protocol ReviewListRouteProtocol {
+protocol ReviewListRouteProtocol : AnyObject {
     
     func showReviewItem(reviewModel : ReviewModel)
     func showAddReviewItem(movieID : Int)
 }
+
+//api
+protocol ReviewManagerDelegate : AnyObject {
+    
+    func didUpdateReview(_ reviewManager: ReviewManager, reviews:  [Review])
+    func didFailWithError(error: Error)
+}
+
 

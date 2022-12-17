@@ -11,7 +11,7 @@ import UIKit
 
 class MovieDetailRouter : MovieDetailRouterProtocol {
     
-    var view : UIViewController?
+    weak var view : UIViewController?
     
     func showReviewList(_ idMovie: Int) {
         let itemIdMovie = ItemReviewModel(movieID: idMovie)

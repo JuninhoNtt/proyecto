@@ -10,7 +10,7 @@ import Foundation
 
 
 class MovieListInteractor {
-    var presenter: MovieListPresenterOutputProtocol?
+    weak var presenter: MovieListPresenterOutputProtocol?
     var api = MovieManager()
 }
 

@@ -12,26 +12,31 @@ class RateConfiguration {
     
     
     static func RateConfigutionViper(_ idMovie : itemRateProtocol) -> UIViewController {
-        let presenter = RatePresenter(movieId: idMovie.idMovie)
+        
+       // let presenter = RatePresenter(movieId: idMovie.idMovie)
+        let presenter = RatePresenter()
         let interactor = RateInteractor()
         let route = RateRoute()
         
-        let view = UIStoryboard(name: "ReviewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "RateViewController") as? RateViewController
+         var view = UIStoryboard(name: "ReviewStoryboard", bundle: nil).instantiateViewController(withIdentifier: "RateViewController") as? RateViewController
         
         //presenter
-       // presenter.view = view
-        presenter.interactor = interactor
-        presenter.route = route
+       // presenter.interactor = interactor
+       // presenter.route = route
         
         //view
         view?.presenter = presenter
         
         //interactor
-        interactor.presenter = presenter
+       //interactor.presenter = presenter
         
        //route
-        route.prenseter = presenter
         route.view = view
+        route.prenseter = presenter
+        presenter.route = route
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+
         
         return view!
         

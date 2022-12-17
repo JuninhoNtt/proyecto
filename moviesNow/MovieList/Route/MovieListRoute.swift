@@ -12,7 +12,7 @@ import UIKit
 
 
 class MovieListRoute {
-    var presenter:MovieListPresenter?
+   weak  var presenter:MovieListPresenterInputProtocol?
     var view:UIViewController?
 }
 

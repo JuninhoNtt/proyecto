@@ -12,7 +12,7 @@ import Foundation
 
 class MovieListPresenter{
     
-    var view:MovieViewControllerProtocol?
+    weak var view:MovieViewControllerProtocol?
     var interactor:MovieListInteractor?
     var route:MovieListRouteProtocol?
     

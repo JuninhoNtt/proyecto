@@ -14,9 +14,10 @@ class MovieDetailConfigurator {
     static func makeView(_ itemMovieDetailProtocol : ItemMovieDetailProtocol) -> UIViewController {
         
         let presenter = MovieDetailPresenter(itemMovieDetailProtocol)
+
         let router = MovieDetailRouter()
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let view = storyBoard.instantiateViewController(withIdentifier: "DetallesController") as? DetallesController
+        weak var view = storyBoard.instantiateViewController(withIdentifier: "DetallesController") as? DetallesController
         view?.presenter = presenter
         router.view = view
         presenter.router = router

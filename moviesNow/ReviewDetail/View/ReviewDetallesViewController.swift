@@ -14,7 +14,7 @@ class ReviewDetallesViewController: UITableViewController {
     @IBOutlet private weak var autorLabel: UILabel!
     @IBOutlet private weak var rateLabel: UILabel!
     
-    var presenter : ReviewDetailInputPresenter?
+   var presenter : ReviewDetailInputPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()

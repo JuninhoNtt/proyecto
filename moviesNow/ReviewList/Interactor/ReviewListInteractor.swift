@@ -9,7 +9,7 @@ import Foundation
 
 
 class ReviewListInteractor {
-    var presenter : ReviewListPresenterOuputProtocol?
+    weak var presenter : ReviewListPresenterOuputProtocol?
     var api = ReviewManager()
 
 }
@@ -25,11 +25,9 @@ extension ReviewListInteractor : ReviewListInteractorProtocol {
 
 extension ReviewListInteractor : ReviewManagerDelegate {
     func didUpdateReview(_ reviewManager: ReviewManager, reviews: [Review]) {
-        //reviewResponse.author_details.rating
         var reviewModelList = [ReviewModel]()
         for reviewResponse in reviews {
             let reviewModel = ReviewModel(author: reviewResponse.author, content: reviewResponse.content,rating: reviewResponse.author_details.rating)
-            print(reviewModel.content)
             reviewModelList.append(reviewModel)
         }
         presenter?.setListReview(reviewList: reviewModelList)

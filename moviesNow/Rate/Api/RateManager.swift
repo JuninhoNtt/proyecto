@@ -8,14 +8,10 @@
 import Foundation
 
 
-protocol RateManagerDelegate{
-    func didUpdateRate(_ rateManager: RateManager, rateResponseModel:  RateResponseModel)
-    func didFailWithError(error: Error)
-}
 
 struct RateManager{
     
-    var delegate: RateManagerDelegate?
+   weak var  delegate: RateManagerDelegate?
     var baseUrl = Constantes.BASE_URL
     let apiKey =  Constantes.API_KEY
     let sessionId = Constantes.SESSION_ID

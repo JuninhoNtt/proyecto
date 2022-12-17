@@ -7,33 +7,30 @@
 
 import Foundation
 
-//view
 protocol itemRateProtocol{
     
     var idMovie:Int {get}
 }
 
-
-//view
-protocol ReviewViewControllerDelegate{
-    
-    func reviewViewControllerDelegate(_ rateViewController: RateViewController, didCreateReview review : String)
+protocol RateManagerDelegate : AnyObject{
+    func didUpdateRate(_ rateManager: RateManager, rateResponseModel:  RateResponseModel)
+    func didFailWithError(error: Error)
 }
 
+
 //presenter
-protocol RatePrenseterProtocol{
+protocol RatePrenseterProtocol : AnyObject{
     
-    func setRateMovie(review: String, rating : String)
+    func setRateMovie(rating : String)
     func showRateResponse(message : RateResponseModel)
     func showRateError(message : String)
 }
 //interactor
-protocol RateInteractorProtocol{
+protocol RateInteractorProtocol : AnyObject {
     func setRateMovie(movieID : Int, rate : Rate)
-    func getRateMovieResponse()
 }
 //rouuter
-protocol RateRouteProtocol{
+protocol RateRouteProtocol : AnyObject {
     func showRateMessage(rateResponseModel : RateResponseModel)
     func showRateError(message : String)
 }

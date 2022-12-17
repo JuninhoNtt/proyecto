@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MovieManagerDelegate {
+protocol MovieManagerDelegate : AnyObject {
     func didUpdateMovies(_ movieManager: MovieManager, moviesResponse:  [MovieResponse])
     func didFailWithError(error: Error)
 }
@@ -16,7 +16,7 @@ struct MovieManager {
  
     let movieURL = Constantes.BASE_URL+Constantes.NOW_PLAYING+Constantes.API_KEY
     
-    var delegate: MovieManagerDelegate?
+    weak var delegate: MovieManagerDelegate?
     
     func fetchMovie() {
         performRequest(with: movieURL)

@@ -11,20 +11,19 @@ import UIKit
 
 
 class RateRoute {
-    var prenseter: RatePrenseterProtocol?
-    var view :RateViewController?
+    weak var view :UIViewController?
+
+     weak var prenseter: RatePrenseterProtocol?
     
 }
 
 extension RateRoute : RateRouteProtocol {
     
     func showRateMessage(rateResponseModel : RateResponseModel) {
+        print("estoy en el router :\(rateResponseModel.status_message)")
         
-        DispatchQueue.main.async {
-            let alert = CrearAlerta.alertCustomCerrar(titulo: String(rateResponseModel.status_code), mensaje: rateResponseModel.status_message, color: UIColor.white)
-            alert.addAction(UIAlertAction(title: "Cerrar", style: .cancel, handler: { action in
-                self.view?.navigationController?.popViewController(animated: true)
-            }))
+       DispatchQueue.main.async {
+           let alert = CrearAlerta.alertaSimple(titulo: String(rateResponseModel.status_code), mensaje: rateResponseModel.status_message, color: UIColor.white)
             self.view?.present(alert, animated: true)
         }
         

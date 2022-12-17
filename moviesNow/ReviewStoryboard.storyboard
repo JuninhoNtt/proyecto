@@ -19,28 +19,8 @@
                         <sections>
                             <tableViewSection id="bZJ-Kg-pLs">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="8cW-56-IqS">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8cW-56-IqS" id="Oln-PZ-9E8">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGR-Hm-lV6">
-                                                    <rect key="frame" x="20" y="35" width="353" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="SGR-Hm-lV6" secondAttribute="trailing" id="J3G-RX-mGD"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="SGR-Hm-lV6" secondAttribute="bottom" id="TEt-ZA-SS1"/>
-                                                <constraint firstItem="SGR-Hm-lV6" firstAttribute="leading" secondItem="Oln-PZ-9E8" secondAttribute="leadingMargin" id="qUt-Mz-74F"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="cbh-tj-oly">
-                                        <rect key="frame" x="0.0" y="130" width="393" height="80"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cbh-tj-oly" id="AUY-QS-Vms">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
@@ -66,7 +46,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="f6Q-Rt-YkL">
-                                        <rect key="frame" x="0.0" y="210" width="393" height="80"/>
+                                        <rect key="frame" x="0.0" y="130" width="393" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f6Q-Rt-YkL" id="zWQ-cE-3qP">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
@@ -103,7 +83,6 @@
                     <connections>
                         <outlet property="rateLabel" destination="fUF-Vo-q05" id="odZ-jn-VmG"/>
                         <outlet property="rateMovieStepper" destination="pYS-vo-qpB" id="qf6-pR-8tz"/>
-                        <outlet property="reviewTextField" destination="SGR-Hm-lV6" id="Afb-K5-Hke"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHQ-mi-sWu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

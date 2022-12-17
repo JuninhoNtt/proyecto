@@ -8,14 +8,14 @@
 import Foundation
 
 //view
-protocol MovieViewControllerProtocol{
+protocol MovieViewControllerProtocol : AnyObject {
     //lo que debe mostar la view
     func showMovie(listMovies: [MovieModel])
     func showErrorView()
 }
 //prenseter
 //datos de ingreso
-protocol MovieListPresenterInputProtocol{
+protocol MovieListPresenterInputProtocol : AnyObject{
     //datos que se van a pedir al presenter
     func getMovieList()
     //presenter to route
@@ -24,14 +24,14 @@ protocol MovieListPresenterInputProtocol{
     func showAlertMovieList()
 }
 //datos de salida
-protocol MovieListPresenterOutputProtocol{
+protocol MovieListPresenterOutputProtocol : AnyObject{
     //datos que el presenter tiene que devolver
     func setMovieList(listMovies : [MovieModel])
     func setErrorList()
     
 }
 //interactor
-protocol MovieListInteractorProtocol{
+protocol MovieListInteractorProtocol : AnyObject{
     func getListMovies()
 }
 

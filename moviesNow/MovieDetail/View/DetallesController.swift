@@ -16,7 +16,7 @@ class DetallesController: UITableViewController {
     @IBOutlet private weak var estrenoLabel: UILabel!
     @IBOutlet private weak var sinopsisLabel: UILabel!
     @IBOutlet private weak var movieImageView: UIImageView!
-    var presenter: MovieDetailInputProtocol?
+    var  presenter: MovieDetailInputProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
